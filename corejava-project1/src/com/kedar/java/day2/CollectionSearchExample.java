@@ -61,8 +61,6 @@ public class CollectionSearchExample {
         }
 
 
-       List<Student> first5Students =  students.subList(0,4);
-
         //Search  Students who belongs to MECH
         List<Student> mechStudents = new ArrayList<>();
         for(Student student:students) {
