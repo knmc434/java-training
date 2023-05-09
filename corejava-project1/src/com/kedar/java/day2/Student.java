@@ -3,26 +3,13 @@ package com.kedar.java.day2;
 import java.util.List;
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
+
 
     public enum Gender {
         MALE, FEMALE;
     }
     private int studentId;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student)) return false;
-        Student student = (Student) o;
-        return studentId == student.studentId && age == student.age && studentName.equals(student.studentName) && studentAddress.equals(student.studentAddress)  && gender == student.gender;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(studentId, studentName, studentAddress, age,  gender);
-    }
-
     private String studentName;
     private String studentAddress;
     private int age;
@@ -108,5 +95,33 @@ public class Student {
                 ", subjects=" + subjects +
                 ", gender=" + gender +
                 '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId && age == student.age && studentName.equals(student.studentName) && studentAddress.equals(student.studentAddress)  && gender == student.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId, studentName, studentAddress, age,  gender);
+    }
+
+
+    @Override
+    public int compareTo(Student o) {
+        //sort based on age, if it is zero both are of same age, if they are on same age, we go and sort on name
+        int count = this.getAge() - o.getAge();
+        if(count==0) {
+            return this.studentName.compareTo(o.getStudentName());
+        } else {
+            return count;
+        }
+
+
     }
 }

@@ -63,9 +63,11 @@ public class CollectionSearchExample {
 
         //Search  Students who belongs to MECH
         List<Student> mechStudents = new ArrayList<>();
+        //Student -> Department Inside -> Department Name Inside
+        //Output, Studentname Belongs to Mechanical Department
         for(Student student:students) {
             //you need to find department of student,
-            if( student.getDepartment() != null &&  student.getDepartment().getDepartmentName()==Department.DepartmentName.MECH) {
+            if( student.getDepartment()!=null && student.getDepartment().getDepartmentName()==Department.DepartmentName.MECH) {
                 System.out.println(student.getStudentName()+" Belongs to Mechanical Dept");
             }
         }

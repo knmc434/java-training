@@ -6,6 +6,12 @@ public class Subject {
     private String subjectName;
     private int marks;
 
+    public Subject(int subjectId, String subjectName, int marks) {
+        this.subjectId = subjectId;
+        this.subjectName = subjectName;
+        this.marks = marks;
+    }
+
     public int getSubjectId() {
         return subjectId;
     }
