@@ -31,6 +31,8 @@ public class ComparatorMain {
             @Override
             public int compare(Student o1, Student o2) {
                 int count = o1.getAge()-o2.getAge();
+
+                //int count  = o2.getMarks()-o1.getMarks();
                 if(count==0) {
                     return o1.getStudentName().compareTo(o2.getStudentName());
                 } else {

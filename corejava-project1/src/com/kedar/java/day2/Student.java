@@ -97,6 +97,9 @@ public class Student implements Comparable<Student>{
                 '}';
     }
 
+    public boolean isFemale() {
+        return gender == Gender.FEMALE;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -121,7 +124,14 @@ public class Student implements Comparable<Student>{
         } else {
             return count;
         }
-
-
     }
+
+    public int getMarks() {
+        int totalMarks =0;
+        for(Subject subject:subjects) {
+            totalMarks=totalMarks+ subject.getMarks();
+        }
+        return totalMarks;
+    }
+
 }
